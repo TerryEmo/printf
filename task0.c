@@ -1,11 +1,9 @@
-#include <stdio.h>
-#include <stdarg.h>
-
-int_printf(const char *format, ...)
+#include "main.h"
+int _printf(const char *format, ...)
 {
 va_list ap;
 const char *s;
-int i, j, printChars;
+int printChars;
 
 va_start(ap, format);
 
@@ -17,7 +15,7 @@ format++;
 switch (*format)
 {
 case 'c':
-_putchar(va_arg(ap, int));
+putchar(va_arg(ap, int));
 printChars++;
 break;
 case 's':
@@ -25,28 +23,28 @@ case 's':
 s = va_arg(ap, const char *);
 while (*s)
 {
-_putchar(*s);
+putchar(*s);
 s++;
 printChars++;
-};
-};
+}
+}
 break;
 case '%':
-_putchar('%');
+putchar('%');
 printChars++;
 break;
 default:
 break;
-};
-};
+}
+}
 else
 {
-_putchar(*format);
+putchar(*format);
 printChars++;
 }
 format++;
 }
-va_end(args);
+va_end(ap);
 return (printChars);
 }
 
