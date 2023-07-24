@@ -17,7 +17,7 @@ format++;
 switch (*format)
 {
 case 'c':
-putchar(va_arg(ap, int));
+_putchar(va_arg(ap, int));
 printChars++;
 break;
 case 's':
@@ -25,14 +25,14 @@ case 's':
 s = va_arg(ap, const char *);
 while (*s)
 {
-putchar(*s);
+_putchar(*s);
 s++;
 printChars++;
 };
 };
 break;
 case '%':
-putchar('%');
+_putchar('%');
 printChars++;
 break;
 default:
@@ -41,7 +41,7 @@ break;
 };
 else
 {
-putchar(*format);
+_putchar(*format);
 printChars++;
 }
 format++;
