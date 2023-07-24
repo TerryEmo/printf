@@ -1,4 +1,9 @@
 #include "main.h"
+/**
+ * _printf - print characters
+ * @format: input
+ * Return: output
+ */
 int _printf(const char *format, ...)
 {
 va_list ap;
@@ -12,39 +17,32 @@ while (*format)
 if (*format == '%')
 {
 format++;
-switch (*format)
+if (*format == 'c')
 {
-case 'c':
 putchar(va_arg(ap, int));
 printChars++;
-break;
-case 's':
+}
+else if (*format == 's')
 {
 s = va_arg(ap, const char *);
+if (s == NULL)
+	s = "(null)";
 while (*s)
+	putchar(*s);
+	s++;
+	printChars++;
+}
+else if (*format == '%')
 {
-putchar(*s);
-s++;
-printChars++;
-}
-}
-break;
-case '%':
 putchar('%');
 printChars++;
-break;
-default:
-break;
 }
 }
 else
-{
-putchar(*format);
-printChars++;
-}
+	putchar(*format);
+	printChars++;
 format++;
 }
 va_end(ap);
 return (printChars);
 }
-
