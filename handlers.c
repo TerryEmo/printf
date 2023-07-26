@@ -1,4 +1,4 @@
-i#include "main.h"
+#include "main.h"
 
 /**
  * handle_write_char - outputs a string
@@ -56,7 +56,7 @@ int handle_write_char(char c, char buffer[], int flags,
  * Return: number of characters to be printed
  */
 int write_number(int is_negative, int ind, char buffer[],
-		int flags, int width, int precision, iunt size)
+		int flags, int width, int precision, int size)
 {
 	int length = BUFF_SIZE - ind - 1;
 	char padd = ' ', extra_ch = 0;
@@ -160,7 +160,7 @@ int write_unsgnd(int is_negative, int ind,
 
 	if (precision > 0 && precision < length)
 		padd = ' ';
-	while (precision > lenght)
+	while (precision > length)
 	{
 	buffer[--ind] = '0';
 		length++;
