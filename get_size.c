@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * get_size - Calculates the size to cost the ragument
+ * get_size - get argument size
  * @format: Formatted string
  * @i: List of argument to be printed
  * Return: Precision

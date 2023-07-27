@@ -43,7 +43,6 @@ int handle_write_char(char c, char buffer[], int flags,
 		return (write(1, &buffer[0], 1));
 }
 
-	/** Write Number **/
 /**
  * write_number - print a string
  * @is_negative: argument list
